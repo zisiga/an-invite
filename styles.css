@@ -57,15 +57,6 @@ h1 {
   background-color: rgb(246, 179, 124);
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .content-holder {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-}
-
 #streamers {
   position: absolute;
   top: 0;

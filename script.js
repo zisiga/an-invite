@@ -13,14 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drawBackground();
+    clearTimeout(resizeTimer); // Clear any previous resize timer
+    resizeTimer = setTimeout(() => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      drawBackground();
+    }, 250); // Delay the resizing to debounce the event
   }
 
+  // Initial setup
   resizeCanvas();
 
   // Handle window resize
+  let resizeTimer;
   window.addEventListener('resize', resizeCanvas);
 
   const text = '*';
