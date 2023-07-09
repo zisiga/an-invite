@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     drawBackground();
   }
 
-  // Initial setup
   resizeCanvas();
 
   // Handle window resize
