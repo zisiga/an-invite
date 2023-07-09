@@ -4,7 +4,6 @@ body {
   position: relative;
 }
 
-
 #background-canvas {
   display: block;
   position: absolute;
@@ -34,7 +33,7 @@ h1 {
 }
 
 .content-holder {
-  padding: 100px;
+  padding: 10px;
   box-sizing: border-box;
   position: relative;
   z-index: 2;
@@ -42,141 +41,32 @@ h1 {
 
 .content {
   font-family: 'CabinetGrotesk-Regular', sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   text-align: left;
   font-size: 20px;
   line-height: 1.6;
-  font-weight: 100;
   color: #000000;
-  max-width: 600px;
   margin-bottom: 15px;
   margin-top: 100px;
+  max-width: 600px; /* Set the desired max-width */
 }
 
 .highlight {
   background-color: rgb(246, 179, 124);
 }
 
-#streamers {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.streamer {
-  position: absolute;
-  width: 5px;
-  height: 50px;
-  background-color: rgb(246, 179, 124);
-  animation: streamer-animation 8s infinite linear;
-}
-
-#special-streamer {
-  width: 7px; 
-  height: 10px; 
-  animation-duration: 40s; 
-  animation-direction: reverse; 
-  transform: rotate(45deg);
-}
-
-#special-streamer-1 {
-  width: 17px; 
-  height: 10px; 
-  animation: streamer-animation 20s infinite linear;
-}
-
-#special-streamer-2 {
-  width: 50px; 
-  height: 1px; 
-  animation-duration: 50s; 
-  animation-direction: reverse; 
-  transform: rotate(90deg);
-}
-
-#special-streamer-3 {
-  width: 20px; 
-  height: 10px; 
-  animation-duration: 30s; 
-  animation-direction: reverse; 
-  transform: rotate(20deg);
-}
-
-#special-streamer-4 {
-  width: 5px; 
-  height: 2px; 
-  animation-duration: 50s; 
-  animation-direction: reverse; 
-  transform: rotate(45deg);
-}
-
-#special-streamer-5 {
-  width: 7px; 
-  height: 60px; 
-  animation-duration: 10s; 
-  animation-direction: reverse; 
-  transform: rotate(45deg);
-}
-
-
-#special-streamer-6 {
-  width: 17px; 
-  height: 10px; 
-  animation: streamer-animation 20s infinite linear;
-}
-
-#special-streamer-7 {
-  width: 200px; 
-  height: 1px; 
-  animation-duration: 20s; 
-  animation-direction: reverse; 
-  transform: rotate(90deg); 
-}
-
-#special-streamer-8 {
-  width: 2px; 
-  height: 10px; 
-  animation-duration: 30s; 
-  animation-direction: reverse; 
-  transform: rotate(20deg); 
-}
-
-#special-streamer-9 {
-  width: 5px; 
-  height: 5px; 
-  animation: streamer-animation 10s infinite linear;
-}
-
-#special-streamer-10 {
-  width: 7px;
-  height: 60px; 
-  animation: streamer-animation 10s infinite linear;
-}
-
-@keyframes streamer-animation {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(100vw + 50%), calc(100vh + 50%)) rotate(720deg);
-    opacity: 0;
-  }
-}
-
+/* Media query for mobile devices */
 @media (max-width: 768px) {
   .content-holder {
+    padding: 0;
     width: 100%;
-    padding: 10px;
     box-sizing: border-box;
+  }
+  
+  .content {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+    max-width: none; /* Remove the max-width */
   }
 }
