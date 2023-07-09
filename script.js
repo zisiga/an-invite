@@ -13,19 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function resizeCanvas() {
-    clearTimeout(resizeTimer); // Clear any previous resize timer
-    resizeTimer = setTimeout(() => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      drawBackground();
-    }, 250); // Delay the resizing to debounce the event
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drawBackground();
   }
-
   // Initial setup
   resizeCanvas();
 
   // Handle window resize
-  let resizeTimer;
   window.addEventListener('resize', resizeCanvas);
 
   const text = '*';
@@ -52,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function handleMove(event) {
+    event.preventDefault(); 
     let x, y;
     if (event.touches) {
       x = event.touches[0].clientX;
@@ -62,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     createLetter(x, y);
   }
-
+  
   document.addEventListener('mousemove', handleMove);
   document.addEventListener('touchmove', handleMove, { passive: true });
 
