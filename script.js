@@ -1,29 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const canvas = document.getElementById('background-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function drawBackground() {
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, '#25598e');
-    gradient.addColorStop(0.5, '#5e99cd');
-    gradient.addColorStop(1, '#c5e2f6');
-
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drawBackground();
-  }
-  // Initial setup
-  resizeCanvas();
-
-  // Handle window resize
-  window.addEventListener('resize', resizeCanvas);
-
-  const text = '*';
+const text = '*';
   let currentIndex = 0;
   let letterSpacing = 1000;
 
@@ -70,4 +45,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     return color;
   }
-});
